@@ -14,5 +14,6 @@
 		FROM employees
 		WHERE employee_id = #{employeeId}
 	</select>
+	
+	<insert id="empInsert"></insert>
 </mapper>
-
