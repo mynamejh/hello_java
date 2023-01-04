@@ -15,5 +15,8 @@
 		WHERE employee_id = #{employeeId}
 	</select>
 	
-	<insert id="empInsert"></insert>
+	<insert id="empInsert">
+	insert into employees(employee_id)
+	values (555)
+	</insert>
 </mapper>
