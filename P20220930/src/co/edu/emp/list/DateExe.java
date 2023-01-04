@@ -7,25 +7,25 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class DateExe {
-	//³¯Â¥,½Ã°£
+	//ë‚ ì§œ,ì‹œê°„
 	public static void main(String[] args) {
 		Date today = new Date();//1970.1.1 2022.10.5 => 50*12*30*24*60*60*1000
 //		today.setYear(2022);
 //		today.setMonth(11);
 		String ymd = "2022-10-05 13:14:15";
 		//2022-10-05 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); //³¯Â¥ Çü½Ä Á¤ÇØÁÜ
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss"); //ë‚ ì§œ í˜•ì‹ ì •í•´ì¤Œ
 		System.out.println(sdf.format(today));
 		try {
 			today = sdf.parse(ymd);
-			System.out.println(today);//try ±¸¹®ÇÏ´Ù°¡ ¿¡·¯°¡¹ß»ý -> catch ±¸¹® ¾²°Ú´Ù.
+			System.out.println(today);//try êµ¬ë¬¸í•˜ë‹¤ê°€ ì—ëŸ¬ê°€ë°œìƒ -> catch êµ¬ë¬¸ ì“°ê² ë‹¤.
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
-		//³¯Â¥(LocalDate), ½Ã°£(LocalTime) -> LocalDateTime
+		//ë‚ ì§œ(LocalDate), ì‹œê°„(LocalTime) -> LocalDateTime
 		LocalDateTime day = LocalDateTime.now();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh½ÃmmºÐssÃÊ");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hhì‹œmmë¶„ssì´ˆ");
 //		day.format(dtf);
 		day = LocalDateTime.of(2022, 10, 5, 10, 20, 30);
 		System.out.println(day.format(dtf));
